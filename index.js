@@ -105,3 +105,8 @@ for (var i = 0; i < finances.length; i++) {
 }
 console.log("Total: $" + totalNetProfitLosses);
 
+// calculate average
+
+average= Math.floor(totalNetProfitLosses / finances.length);
+
+console.log("Average Change: " +"$" + average);
