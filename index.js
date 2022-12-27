@@ -97,3 +97,11 @@ console.log ("----------------------------");
 
 numberofMonths= ("Total Months: " + finances.length);
 console.log (numberofMonths);
+
+//Total Net Profit&Losses
+var totalNetProfitLosses = 0;
+for (var i = 0; i < finances.length; i++) {
+    totalNetProfitLosses += finances[i][1];
+}
+console.log("Total: $" + totalNetProfitLosses);
+
