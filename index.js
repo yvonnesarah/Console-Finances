@@ -121,3 +121,18 @@ var averageChange = changes.reduce((a, b) => a + b, 0) / changes.length;
 averageChange = averageChange.toFixed(2);
 
 console.log('Average Change: $' + averageChange);
+
+
+//calculate the greatest increase in profit 
+
+finances.sort((a,b) => a[1] - b[1]);
+
+console.log ("Greatest Increase in Profits: " + (finances[85][0])+" ($" + (finances[85][1])+ ")")
+
+
+//calculate the greatest decrease in profit
+
+finances.sort((a,b) => a[1] - b[1]);
+
+
+console.log ("Greatest decrease in Profits: " + (finances[0][0])+" ($" + (finances[0][1])+ ")")
