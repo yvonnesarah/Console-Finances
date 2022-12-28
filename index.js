@@ -106,8 +106,18 @@ var finances = [
   }
   console.log("Total: $" + totalNetProfitLosses);
   
-  // calculate average
-  
-  average= Math.floor(totalNetProfitLosses / finances.length);
-  
-  console.log("Average Change: " +"$" + average);
+
+  // The average of the changes in Profit/Losses over the entire period.
+
+var changes = [];
+
+for (var i = 1; i < finances.length; i++) {
+  changes.push(finances[i][1] - finances[i - 1][1]);
+}
+
+var averageChange = changes.reduce((a, b) => a + b, 0) / changes.length;
+
+// Round averageChange to two decimal points
+averageChange = averageChange.toFixed(2);
+
+console.log('Average Change: $' + averageChange);
