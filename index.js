@@ -123,16 +123,32 @@ averageChange = averageChange.toFixed(2);
 console.log('Average Change: $' + averageChange);
 
 
-//calculate the greatest increase in profit 
+// Calculate the greatest increase in profits (date and amount) over the entire period.
+let greatestIncrease = ["", 0];
 
-finances.sort((a,b) => a[1] - b[1]);
+for (let i = 1; i < finances.length; i++) {
+  const previousElement = finances[i - 1][1];
+  const element = finances[i][1];
 
-console.log ("Greatest Increase in Profits: " + (finances[85][0])+" ($" + (finances[85][1])+ ")")
+  const increase = element - previousElement;
+
+  if (increase > greatestIncrease[1])
+    greatestIncrease = [finances[i][0], increase];
+}
+
+console.log('Greatest Increase in Profits: ' + greatestIncrease[0] +" ($" + greatestIncrease[1] + ")");
 
 
-//calculate the greatest decrease in profit
+// Calculate the greatest decrease in losses (date and amount) over the entire period.
+let greatestDecrease = ["", 0];
 
-finances.sort((a,b) => a[1] - b[1]);
+for (let i = 1; i < finances.length; i++) {
+  const previousElement = finances[i - 1][1];
+  const element = finances[i][1];
 
+  const decrease = element - previousElement;
 
-console.log ("Greatest decrease in Profits: " + (finances[0][0])+" ($" + (finances[0][1])+ ")")
+  if (decrease < greatestDecrease[1]) greatestDecrease = [finances[i][0], decrease];
+}
+
+console.log("Greatest Decrease in Profits: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")");
