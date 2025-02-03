@@ -1,41 +1,55 @@
 # Console-Finances
 
-## Description
-The Console Finance Tool presents analysis of the previously given financial records of a company. Available dataset was composed of Date and Profit/Losses data. The tool is enable to show the total months included in dataset, the net total amount of Profit/Losses over the entire period, the average of the changes in Profit/Losses over the entire period. It also defines the greatest increase in profits and the greatest decrease in losses over the entire period.
+## 📌 Description
+The Console Finance Tool provides analysis of a company's financial records based on a dataset containing Date and Profit/Loss information. The tool computes and displays various key financial metrics, including the total number of months in the dataset, the net total Profit/Loss over the entire period, the average change in Profit/Loss, and the greatest increase and decrease in profits. These insights allow for a comprehensive overview of the company's financial performance.
 
-## Prerequisites
-N/A
+## 🛠 Prerequisites
+No additional prerequisites are required to run the tool.
 
-## Criteria
-* Calculate the total number of months included in the dataset.
-* Calculate the net total amount of Profit/Losses over the entire period.
-* Calculate the average of the changes in Profit/Losses over the entire period.
-* Calculate the greatest increase in profits (date and amount) over the entire period.
-* Calculate the greatest decrease in profits (date and amount) over the entire period.
+## 📋 Criteria
+* Calculates the total number of months included in the dataset.
+* Computes the net total amount of Profit/Loss over the entire period.
+* Determines the average of the changes in Profit/Losses over the entire period.
+* Identifies the greatest increase in profits (with the corresponding date and amount).
+* Identifies the greatest decrease in losses (with the corresponding date and amount).
  
- ## Technologies Used
- Built with:
+ ## 💻 Technologies Used
+This project was built using:
 * HTML
 * JavaScript
 
-## Installation
-N/A
+## 🚀 Installation
+No installation is needed. The tool runs directly in the browser using the developer console.
 
-## Usage
-To use this Console Finance tool, open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows). A console panel should open either below or to the side of the webpage in the browser. There you will see the results of the total number of months included in the dataset, the average of the changes in profit/losses over the entire period, greatest increase in profits (date and amount) over the entire period and greatest decrease in profits (date and amount) over the entire period. 
+## 📚 Usage
+1. Open the Console Finance Tool by navigating to the following Live Application. 
 
-## Project Link
-Application can can be viewed here: 
+2. Open Chrome DevTools by pressing:
+* Command + Option + I (macOS)
+* Control + Shift + I (Windows)
+
+3. A console panel will open, displaying the financial analysis results:
+* Total number of months in the dataset.
+* Net total Profit/Loss.
+* Average change in Profit/Loss.
+* Greatest increase in profits (date and amount).
+* Greatest decrease in profits (date and amount).
+
+## 🔗 Live Demo & Repository
+Application can be viewed here: 
 * [Live](https://yvonnesarah.github.io/Console-Finances/)
 
 * [Repository](https://github.com/yvonnesarah/Console-Finances)
 
-## Screenshot
-Console Finances
+## 🖼 Screenshot
+Below is a preview of Console Finances:
 ![Screenshot](assets/images/console-finances.png "Console Finances")
 
-## Credit
-N/A
+## 👥 Credit
+No external credits or attributions are required.
 
-## Licence
-Please refer to the LICENSE in the repo.
+## 📜 License
+This project is open-source. For licensing details, please refer to the LICENSE file in the repository.
+
+## 📬 Contact
+You can reach me at 📧 yvonneadedeji.sarah@gmail.com.
