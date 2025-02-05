@@ -1,4 +1,4 @@
-//dataset
+// Dataset: An array containing financial data with each entry as ['Month-Year', Profit/Loss amount]
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -86,69 +86,63 @@ var finances = [
   ['Dec-2016', 60988],
   ['Jan-2017', 138230],
   ['Feb-2017', 671099]
-  ];
-  
-  //Output finacial analysis to console
-  
-  console.log ("Financial Analysis");
-  
-  console.log ("----------------------------");
-  
-  // Get total number of months 
-  
-  numberofMonths= ("Total Months: " + finances.length);
-  console.log (numberofMonths);
-  
-  //Total Net Profit&Losses
-  var totalNetProfitLosses = 0;
-  for (var i = 0; i < finances.length; i++) {
-      totalNetProfitLosses += finances[i][1];
-  }
-  console.log("Total: $" + totalNetProfitLosses);
-  
+];
 
-  // The average of the changes in Profit/Losses over the entire period.
+// Output financial analysis to console
+console.log("Financial Analysis");
+console.log("----------------------------");
 
-var changes = [];
+// Get total number of months in dataset
+var numberOfMonths = finances.length;
+console.log("Total Months: " + numberOfMonths);
+
+// Calculate total net profit/loss over the entire period
+var totalNetProfitLosses = 0;
+for (var i = 0; i < finances.length; i++) {
+  totalNetProfitLosses += finances[i][1]; // Summing up all profit/loss values
+}
+console.log("Total: $" + totalNetProfitLosses);
+
+// Calculate the average change in Profit/Losses over the entire period
+var changes = []; // Array to store month-to-month changes in profit/loss
 
 for (var i = 1; i < finances.length; i++) {
-  changes.push(finances[i][1] - finances[i - 1][1]);
+  changes.push(finances[i][1] - finances[i - 1][1]); // Difference between current and previous month
 }
 
+// Calculate the average change
 var averageChange = changes.reduce((a, b) => a + b, 0) / changes.length;
 
 // Round averageChange to two decimal points
 averageChange = averageChange.toFixed(2);
+console.log("Average Change: $" + averageChange);
 
-console.log('Average Change: $' + averageChange);
-
-
-// Calculate the greatest increase in profits (date and amount) over the entire period.
-let greatestIncrease = ["", 0];
+// Calculate the greatest increase in profits (date and amount)
+let greatestIncrease = ["", 0]; // Initialize with empty date and zero profit increase
 
 for (let i = 1; i < finances.length; i++) {
-  const previousElement = finances[i - 1][1];
-  const element = finances[i][1];
+  const previousElement = finances[i - 1][1]; // Previous month's profit/loss
+  const element = finances[i][1]; // Current month's profit/loss
+  const increase = element - previousElement; // Calculate increase
 
-  const increase = element - previousElement;
-
-  if (increase > greatestIncrease[1])
-    greatestIncrease = [finances[i][0], increase];
+  if (increase > greatestIncrease[1]) {
+    greatestIncrease = [finances[i][0], increase]; // Update if new max increase is found
+  }
 }
 
-console.log('Greatest Increase in Profits: ' + greatestIncrease[0] +" ($" + greatestIncrease[1] + ")");
+console.log("Greatest Increase in Profits: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")");
 
-
-// Calculate the greatest decrease in losses (date and amount) over the entire period.
-let greatestDecrease = ["", 0];
+// Calculate the greatest decrease in profits (date and amount)
+let greatestDecrease = ["", 0]; // Initialize with empty date and zero loss decrease
 
 for (let i = 1; i < finances.length; i++) {
-  const previousElement = finances[i - 1][1];
-  const element = finances[i][1];
+  const previousElement = finances[i - 1][1]; // Previous month's profit/loss
+  const element = finances[i][1]; // Current month's profit/loss
+  const decrease = element - previousElement; // Calculate decrease
 
-  const decrease = element - previousElement;
-
-  if (decrease < greatestDecrease[1]) greatestDecrease = [finances[i][0], decrease];
+  if (decrease < greatestDecrease[1]) {
+    greatestDecrease = [finances[i][0], decrease]; // Update if new max decrease is found
+  }
 }
 
 console.log("Greatest Decrease in Profits: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")");
